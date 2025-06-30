@@ -587,6 +587,10 @@
               img(src='@/assets/curso/tema2/51.png', alt='')
     
 
+    .bg-full-width.border-top.actividad.bg-color-actividad
+      .p-4.p-md-5
+        #Actividad                
+          <Actividad :cuestionario="cuestionario"/>
 
     .bg-full-width.border-top.color-primario
       .p-4.p-md-5
@@ -617,8 +621,187 @@
 </template>
 
 <script>
+import Actividad from '@/components/actividad/Actividad.vue'
 export default {
   name: 'Tema2',
+  components: {
+    Actividad,
+  },
+  data() {
+    return {
+      cuestionario: {
+        tema: 'PROYECTO DE VIDA E IDENTIDAD INSTITUCIONAL',
+        titulo: 'Ponte a prueba',
+        introduccion:
+          'Demuestra lo que aprendiste en esta unidad y pon a prueba tus conocimientos.',
+        barajarPreguntas: true,
+        preguntas: [
+          {
+            id: 1,
+            texto:
+              '¿Cuál es uno de los objetivos principales de la Ley 30 de 1992?',
+            imagen: '',
+            barajarRespuestas: true,
+            opciones: [
+              {
+                id: 'a',
+                texto: 'Promover únicamente la formación técnica. ',
+                esCorrecta: false,
+              },
+              {
+                id: 'b',
+                texto:
+                  'Organizar el servicio público de la educación superior en Colombia. ',
+                esCorrecta: true,
+              },
+              {
+                id: 'c',
+                texto: 'Regular exclusivamente la educación básica y media. ',
+                esCorrecta: false,
+              },
+              {
+                id: 'd',
+                texto: 'Definir los costos de la educación privada.',
+                esCorrecta: false,
+              },
+            ],
+            mensaje_correcto: '¡Muy bien! Ha acertado la respuesta.',
+            mensaje_incorrecto: 'Lo sentimos, su respuesta no es la correcta.',
+          },
+          {
+            id: 2,
+            texto:
+              '¿Cuáles de los siguientes elementos forman parte de la identidad institucional de la Institución Tecnológica del Oriente?',
+            imagen: '',
+            barajarRespuestas: true,
+            opciones: [
+              {
+                id: 'a',
+                texto: 'Costos de matrícula. ',
+                esCorrecta: false,
+              },
+              {
+                id: 'b',
+                texto: 'Misión, visión, valores y principios. ',
+                esCorrecta: true,
+              },
+              {
+                id: 'c',
+                texto: 'Actividades recreativas. ',
+                esCorrecta: false,
+              },
+              {
+                id: 'd',
+                texto: 'Número de egresados.',
+                esCorrecta: false,
+              },
+            ],
+            mensaje_correcto: '¡Muy bien! Ha acertado la respuesta.',
+            mensaje_incorrecto: 'Lo sentimos, su respuesta no es la correcta.',
+          },
+          {
+            id: 3,
+            texto:
+              '¿Qué representa el color blanco en la bandera de la Institución Tecnológica del Oriente?',
+            imagen: '',
+            barajarRespuestas: true,
+            opciones: [
+              {
+                id: 'a',
+                texto: 'La creatividad y la calidez. ',
+                esCorrecta: false,
+              },
+              {
+                id: 'b',
+                texto: 'El desarrollo tecnológico sostenible. ',
+                esCorrecta: false,
+              },
+              {
+                id: 'c',
+                texto: 'La paz y la supremacía de la humanidad unida.',
+                esCorrecta: true,
+              },
+              {
+                id: 'd',
+                texto: 'El trabajo en equipo y la innovación.',
+                esCorrecta: false,
+              },
+            ],
+            mensaje_correcto: '¡Muy bien! Ha acertado la respuesta.',
+            mensaje_incorrecto: 'Lo sentimos, su respuesta no es la correcta.',
+          },
+          {
+            id: 4,
+            texto:
+              '¿Qué función cumple la vinculación institucional con la comunidad?',
+            imagen: '',
+            barajarRespuestas: true,
+            opciones: [
+              {
+                id: 'a',
+                texto: 'Aumentar los ingresos económicos de la institución. ',
+                esCorrecta: false,
+              },
+              {
+                id: 'b',
+                texto: 'Mejorar únicamente los indicadores académicos. ',
+                esCorrecta: false,
+              },
+              {
+                id: 'c',
+                texto:
+                  'Fortalecer el compromiso social mediante la proyección y extensión universitaria. ',
+                esCorrecta: true,
+              },
+              {
+                id: 'd',
+                texto: 'Realizar intercambios estudiantiles internacionales.',
+                esCorrecta: false,
+              },
+            ],
+            mensaje_correcto: '¡Muy bien! Ha acertado la respuesta.',
+            mensaje_incorrecto: 'Lo sentimos, su respuesta no es la correcta.',
+          },
+          {
+            id: 5,
+            texto:
+              '¿Cuál es el resultado de aprendizaje esperado al finalizar esta unidad?',
+            imagen: '',
+            barajarRespuestas: true,
+            opciones: [
+              {
+                id: 'a',
+                texto: 'Memorizar todos los artículos de la Ley 30 de 1992. ',
+                esCorrecta: false,
+              },
+              {
+                id: 'b',
+                texto:
+                  'Reconocer la misión, visión, principios y valores institucionales. ',
+                esCorrecta: true,
+              },
+              {
+                id: 'c',
+                texto: 'Recitar el reglamento estudiantil de memoria. ',
+                esCorrecta: false,
+              },
+              {
+                id: 'd',
+                texto: 'Diseñar un nuevo reglamento institucional.',
+                esCorrecta: false,
+              },
+            ],
+            mensaje_correcto: '¡Muy bien! Ha acertado la respuesta.',
+            mensaje_incorrecto: 'Lo sentimos, su respuesta no es la correcta.',
+          },
+        ],
+        mensaje_final_aprobado:
+          '¡Felicidades! Has superado la prueba con éxito.',
+        mensaje_final_reprobado:
+          'Te recomendamos repasar nuevamente la unidad para reforzar los conceptos clave antes de volver a intentarlo.',
+      },
+    }
+  },
   mounted() {
     this.$nextTick(() => {
       this.$aosRefresh()
@@ -627,4 +810,7 @@ export default {
 }
 </script>
 
-<style lang="sass"></style>
+<style lang="sass">
+.bg-color-actividad
+  background-color: #EBF1F5
+</style>
