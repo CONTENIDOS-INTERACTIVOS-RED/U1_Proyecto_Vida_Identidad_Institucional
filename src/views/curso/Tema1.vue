@@ -190,7 +190,7 @@
     .titulo-figura.mb-4
       h5 Tabla 1.
       span Comparativo: Derechos y deberes del estudiante
-    .tabla-a.color-acento-botones
+    .tabla-a.color-acento-botones.mb-5
       table
         thead
           tr
